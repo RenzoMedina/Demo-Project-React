@@ -19,12 +19,12 @@ const CardContent = () => {
         <>
 
             {
-                criptos.map(({ id, name, priceUsd, rank }) => (
+                criptos.map(({ id, name, priceUsd, rank,symbol }) => (
                     [
-                        <div className='card-body'>
-                            <p key={id} hidden></p>
+                        <div key={id} className='card-body'>
                             <p className='name'>Nombre: {name}</p>
-                            <p className='price'>Precio: $ {priceUsd}</p>
+                            <p className='price'>Precio: $ {parseFloat(priceUsd).toFixed(4)}</p>
+                            <p className='symbol'><span>Código:</span> {symbol}</p>
                             <p className='rank'>Ranking : {rank}</p>
                         </div>
                     ]
